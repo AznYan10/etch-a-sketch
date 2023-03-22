@@ -1,17 +1,17 @@
 .grid {
-    width: 40rem;
-    height: 40rem;
+    width: 640px;
+    height: 640px;
     position: relative;
-    left: 30%;
+    left: 25%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
 }
 
 .gridbox {
-    width: 9.5rem;
-    height: 9.5rem;
+    width: 39px;
+    height: 39px;
     color: white;
     margin: 0;
-    margin-right: .5rem;
+    margin-right: 1px;
 }
