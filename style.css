@@ -4,7 +4,7 @@
     height: 640px;
     border: 1px solid black;
     position: relative;
-    left: 25%;
+    left: 35%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -22,4 +22,18 @@
 .hover {
     position: relative;
     background-color: black;
+}
+
+#changeDiv {
+    width: 640px;
+    position: relative;
+    left: 35%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+#changePix {
+    font-size: 15px;
 }
