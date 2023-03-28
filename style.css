@@ -10,20 +10,6 @@
     flex-direction: row;
 }
 
-.gridbox {
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    color: white;
-    margin: 0;
-    /* margin-right: 1px; */
-}
-
-.hover {
-    position: relative;
-    background-color: black;
-}
-
 #changeDiv {
     width: 640px;
     position: relative;
