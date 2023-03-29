@@ -4,22 +4,135 @@
     height: 640px;
     border: 1px solid black;
     position: relative;
-    left: 35%;
+    left: 530px;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
 }
 
-#changeDiv {
+.grid:hover {
+    box-shadow: 40px 40px 40px rgba(0, 0, 0, 0.5);
+}
+
+.changeDiv {
+    background-color: rgba(0, 0, 0, 0.05);
+    display: block;
     width: 640px;
     position: relative;
-    left: 35%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    margin-bottom: 10px;
+    left: 510px;
+    margin-bottom: 9px;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.changeDiv:hover {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 #changePix {
+    width: 150px;
     font-size: 15px;
+    margin-right: 90px;
+    margin-bottom: 10px;
+}
+
+#changePix:hover {
+    font-size: 20px;
+    transition-duration: .5s;
+    box-shadow: 10px 10px 10px black;
+}
+
+#erase {
+    width: 150px;
+    font-size: 15px;
+    margin-right: 90px;
+    margin-bottom: 10px;
+}
+
+#erase:hover {
+    background-color: white;
+    color: white;
+    font-size: 20px;
+    transition-duration: .5s;
+    box-shadow: 10px 10px 10px black;
+}
+
+#randomClr {
+    width: 150px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+#randomClr:hover {
+    font-size: 20px;
+    transition-duration: .5s;
+    box-shadow: 10px 10px 10px black;
+}
+
+#changeBlack {
+    width: 150px;
+    font-size: 15px;
+    margin-right: 90px;
+    margin-bottom: 10px;
+}
+
+#changeBlack:hover {
+    background-color: black;
+    color: black;
+    font-size: 20px;
+    transition-duration: .5s;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.75);
+}
+
+#changeBlue {
+    width: 150px;
+    font-size: 15px;
+    margin-right: 90px;
+    margin-bottom: 10px;
+}
+
+#changeBlue:hover {
+    background-color: blue;
+    color: blue;
+    font-size: 20px;
+    transition-duration: .5s;
+    box-shadow: 10px 10px 10px rgb(0, 0, 255, .75)
+}
+
+
+#changeRed {
+    width: 150px;
+    font-size: 15px;
+    margin-right: 1px;
+    margin-bottom: 10px;
+}
+
+#changeRed:hover {
+    background-color: red;
+    color: red;
+    font-size: 20px;
+    transition-duration: .5s;
+    box-shadow: 10px 10px 10px rgba(255, 0, 0, 0.75);
+}
+
+#lighterClr {
+    width: 150px;
+    font-size: 15px;
+    margin: 0 110px;
+}
+
+#lighterClr:hover {
+    font-size: 20px;
+    transition-duration: .5s;
+    box-shadow: 10px 10px 10px black;
+}
+
+#darkerClr {
+    width: 150px;
+    font-size: 15px;
+}
+
+#darkerClr:hover {
+    font-size: 20px;
+    transition-duration: .5s;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
