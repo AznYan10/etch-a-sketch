@@ -14,8 +14,6 @@ const darkerClr = document.querySelector('#darkerClr');
 let gridSize = 256;
 let newGrid = 40;
 let isCreate = true;
-
-// Color changes
 let color = 'black';
 
 function createGrid () {
@@ -42,7 +40,7 @@ function createGrid () {
     }
 }
 
-// When change pixel is clicked change grid size
+// Change grid size
 function changePixFunc () {
     isCreate = false;
     newGrid = prompt('Enter new grid size (1 - 100): ');
@@ -55,23 +53,76 @@ function changePixFunc () {
     }
 };
 
-// calling and creating functions 
+// rainbow color when hovered
+function randomFunction() {
+    grid.addEventListener('mouseover', makeRanClr);
+    let ranNum = 0;
+    function makeRanClr () {
+        if(ranNum == 0) {
+            color = 'red';
+            ranNum++;
+        } else if(ranNum == 1) {
+            color = 'orange';
+            ranNum++;
+        } else if(ranNum == 2) {
+            color = 'yellow';
+            ranNum++;
+        } else if(ranNum == 3) {
+            color = 'green';
+            ranNum++;
+        } else if(ranNum == 4) {
+            color = 'blue';
+            ranNum++;
+        } else if(ranNum == 5) {
+            color = 'indigo';
+            ranNum++;
+        } else {
+            color = 'violet';
+            ranNum = 0;
+        }
+    }
+}
+
+// Erase function when hoverd
+function eraseFunction() {
+    grid.addEventListener('mouseover', function() {
+        color = 'white';
+        grid.style.boxShadow = '40px 40px 40px white';
+    });
+}
+
+// color to black function when hoverd
+function changeBlackFunc() {
+    grid.addEventListener('mouseover', function() {
+        color = 'black';
+        grid.style.boxShadow = '40px 40px 40px black';
+    });
+}
+
+// color to blue
+function changeBlueFunc() {
+    grid.addEventListener('mouseover', function() {
+        color = 'blue';
+        grid.style.boxShadow = '40px 40px 40px blue';
+    });
+}
+
+// color to red
+function changeRedFunc() {
+    grid.addEventListener('mouseover', function() {
+        color = 'red';
+        grid.style.boxShadow = '40px 40px 40px red';
+    });
+}
+
+// calling functions
 changePixBtn.addEventListener('click', changePixFunc);
-erase.addEventListener('click', function() {
-    color = 'white';
-});
-randomClr.addEventListener('click', function() {
-    color = 'white';
-});
-changeBlack.addEventListener('click', function() {
-    color = 'black';
-});
-changeBlue.addEventListener('click', function() {
-    color = 'blue';
-});
-changeRed.addEventListener('click', function() {
-    color = 'red';
-});
+randomClr.addEventListener('click', randomFunction);
+erase.addEventListener('click', eraseFunction);
+changeBlack.addEventListener('click', changeBlackFunc);
+changeBlue.addEventListener('click', changeBlueFunc);
+changeRed.addEventListener('click', changeRedFunc);
+
 lighterClr.addEventListener('click', function() {
     color = 'white';
 });
