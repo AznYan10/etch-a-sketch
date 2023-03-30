@@ -14,7 +14,7 @@ const darkerClr = document.querySelector('#darkerClr');
 let gridSize = 256;
 let newGrid = 40;
 let isCreate = true;
-let color = 'black';
+let color = '#000000';
 
 function createGrid () {
     for (let i = 0; i < gridSize; i++) {
@@ -28,7 +28,7 @@ function createGrid () {
             tag.id = i;
             tag.style.width = newGrid + 'px';
             tag.style.height = newGrid + 'px';
-            tag.style.backgroundColor = 'white';
+            tag.style.backgroundColor = '#FFFFFF';
             grid.appendChild(tag);
 
             // Event listener when mouse over in the grid
@@ -59,25 +59,25 @@ function randomFunction() {
     let ranNum = 0;
     function makeRanClr () {
         if(ranNum == 0) {
-            color = 'red';
+            color = '#FF0000';
             ranNum++;
         } else if(ranNum == 1) {
-            color = 'orange';
+            color = '#FFA500';
             ranNum++;
         } else if(ranNum == 2) {
-            color = 'yellow';
+            color = '#FFFF00';
             ranNum++;
         } else if(ranNum == 3) {
-            color = 'green';
+            color = '#00FF00';
             ranNum++;
         } else if(ranNum == 4) {
-            color = 'blue';
+            color = '#0000FF';
             ranNum++;
         } else if(ranNum == 5) {
-            color = 'indigo';
+            color = '#4b0082';
             ranNum++;
         } else {
-            color = 'violet';
+            color = '#8F00FF';
             ranNum = 0;
         }
     }
@@ -86,7 +86,7 @@ function randomFunction() {
 // Erase function when hoverd
 function eraseFunction() {
     grid.addEventListener('mouseover', function() {
-        color = 'white';
+        color = '#FFFFFF';
         grid.style.boxShadow = '40px 40px 40px white';
     });
 }
@@ -94,7 +94,7 @@ function eraseFunction() {
 // color to black function when hoverd
 function changeBlackFunc() {
     grid.addEventListener('mouseover', function() {
-        color = 'black';
+        color = '#000000';
         grid.style.boxShadow = '40px 40px 40px black';
     });
 }
@@ -102,7 +102,7 @@ function changeBlackFunc() {
 // color to blue
 function changeBlueFunc() {
     grid.addEventListener('mouseover', function() {
-        color = 'blue';
+        color = '#0000FF';
         grid.style.boxShadow = '40px 40px 40px blue';
     });
 }
@@ -110,10 +110,30 @@ function changeBlueFunc() {
 // color to red
 function changeRedFunc() {
     grid.addEventListener('mouseover', function() {
-        color = 'red';
+        color = '#FF0000';
         grid.style.boxShadow = '40px 40px 40px red';
     });
 }
+
+// Function to lighten or darken hex color 
+const newShade = (hexColor, magnitude) => {
+    hexColor = hexColor.replace(`#`, ``);
+    if (hexColor.length === 6) {
+        const decimalColor = parseInt(hexColor, 16);
+        let r = (decimalColor >> 16) + magnitude;
+        r > 255 && (r = 255);
+        r < 0 && (r = 0);
+        let g = (decimalColor & 0x0000ff) + magnitude;
+        g > 255 && (g = 255);
+        g < 0 && (g = 0);
+        let b = ((decimalColor >> 8) & 0x00ff) + magnitude;
+        b > 255 && (b = 255);
+        b < 0 && (b = 0);
+        return `#${(g | (b << 8) | (r << 16)).toString(16)}`;
+    } else {
+        return hexColor;
+    }
+};
 
 // calling functions
 changePixBtn.addEventListener('click', changePixFunc);
