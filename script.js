@@ -115,6 +115,20 @@ function changeRedFunc() {
     });
 }
 
+// Make color ligher when hovered
+function makeLighter() {
+    grid.addEventListener('mouseover', function() {
+        color = newShade(color, -50);
+    });
+}
+
+// Make color darker when hovered
+function makeDarker() {
+    grid.addEventListener('mouseover', function() {
+        color = newShade(color, 50);
+    });
+}
+
 // Function to lighten or darken hex color 
 const newShade = (hexColor, magnitude) => {
     hexColor = hexColor.replace(`#`, ``);
@@ -142,11 +156,6 @@ erase.addEventListener('click', eraseFunction);
 changeBlack.addEventListener('click', changeBlackFunc);
 changeBlue.addEventListener('click', changeBlueFunc);
 changeRed.addEventListener('click', changeRedFunc);
-
-lighterClr.addEventListener('click', function() {
-    color = 'white';
-});
-darkerClr.addEventListener('click', function() {
-    color = 'white';
-});
+lighterClr.addEventListener('click', makeLighter);
+darkerClr.addEventListener('click', makeDarker);
 createGrid();
