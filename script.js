@@ -87,7 +87,6 @@ function randomFunction() {
 function eraseFunction() {
     grid.addEventListener('mouseover', function() {
         color = '#FFFFFF';
-        grid.style.boxShadow = '40px 40px 40px white';
     });
 }
 
@@ -95,7 +94,6 @@ function eraseFunction() {
 function changeBlackFunc() {
     grid.addEventListener('mouseover', function() {
         color = '#000000';
-        grid.style.boxShadow = '40px 40px 40px black';
     });
 }
 
@@ -103,7 +101,6 @@ function changeBlackFunc() {
 function changeBlueFunc() {
     grid.addEventListener('mouseover', function() {
         color = '#0000FF';
-        grid.style.boxShadow = '40px 40px 40px blue';
     });
 }
 
@@ -111,7 +108,6 @@ function changeBlueFunc() {
 function changeRedFunc() {
     grid.addEventListener('mouseover', function() {
         color = '#FF0000';
-        grid.style.boxShadow = '40px 40px 40px red';
     });
 }
 
